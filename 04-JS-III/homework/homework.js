@@ -3,18 +3,34 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
+
+  arr = [];
+
+  arr.push(array)
+
+  return arr[0];
+
 }
 
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+
+  arr = [];
+
+  arr.push(array);
+
+  return arr.pop();
+
 }
 
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
+
+  
 }
 
 

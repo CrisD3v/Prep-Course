@@ -5,6 +5,19 @@ function obtenerMayor(x, y) {
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
+
+  if ( x > y ) {
+
+    return x;
+
+  } else if ( x < y ) {
+
+    return y;
+    
+  }
+
+  return x;
+
 }
 
 function mayoriaDeEdad(edad) {
@@ -84,6 +97,14 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
+
+  if (numero == 0 || numero == 1 || numero == 4) return false;
+  for (let x = 2 ; x < numero / 2; x ++){
+		 if ( numero % x == 0) return false;
+  }
+  
+  return true;
+  
 }
 
 function esVerdadero(valor){
