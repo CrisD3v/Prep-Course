@@ -72,7 +72,7 @@ function capToFront(s) {
   let minus = arr.filter( m => m ==  m.toLowerCase()  )
   
   return `${mayus.join('')}${minus.join('')}`
-  
+
 }
 
 
@@ -82,6 +82,15 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+
+  let espejo = ''
+  
+  for(let i = str.length -1; i >= 0; i--) {
+    espejo += str[i];
+  }
+
+  return espejo.split(' ').reverse().join(' ')
+ 
 } 
 
 
@@ -90,6 +99,11 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+
+  const num = Number( numero.toString().split('').reverse().join('') )
+  
+	return (numero == num ) ? 'Es capicua' : 'No es capicua'
+
 }
 
 
@@ -97,6 +111,9 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+
+  return cadena.split('').filter(f => {return f !== 'a' & f !== 'b' & f !== 'c' }).join('')
+
 }
 
 
@@ -104,6 +121,14 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+
+    arr.sort(function (a, b) {
+
+    return a.length - b.length;
+
+    })
+    
+    return arr
 }
 
 
@@ -113,6 +138,31 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+
+	let arr = []
+  
+  for (const i in arreglo1){
+    
+    for (const j in arreglo2){
+      
+      if(arreglo1[i] == arreglo2[j]){
+        
+        arr.push([arreglo1[i]])
+        
+      }
+      
+    }
+    
+  }
+  
+  arr.join('').split('')
+  
+  return arr.map(str => {
+    
+  	return Number(str);
+    
+	})
+
 }
 
 
