@@ -10,6 +10,17 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+
+  const arr = [];
+  
+  for (const [i,j] of Object.entries(objeto)){
+
+      arr.push([i,j]);
+
+  }
+
+  return arr;
+
 }
 
 
@@ -18,6 +29,29 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+
+  const cantidadC = {}
+  
+  for (const i in string) {
+    
+    		let cActual = string[i]
+      
+        if( cActual in cantidadC ){
+          
+        	cantidadC[cActual] ++
+          
+      }
+    
+    	else {
+        
+       cantidadC[cActual] = 1
+        
+    	}
+    	 
+  }
+  
+  return cantidadC
+
 }
 
 
@@ -26,6 +60,19 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+
+  let arr = []
+  
+  for( const i in s ) {
+    
+    	arr.push(s[i])
+  }
+  
+  let mayus = arr.filter( m => m ==  m.toUpperCase()  )
+  let minus = arr.filter( m => m ==  m.toLowerCase()  )
+  
+  return `${mayus.join('')}${minus.join('')}`
+  
 }
 
 
